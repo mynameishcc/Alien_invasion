@@ -1,10 +1,14 @@
+import os
+
 class GameStats:
     def __init__(self, ai_game):
         self.settings = ai_game.settings
         self.reset_stats()
         self.game_active = False
         try:
-            with open('high_score.txt', 'r') as f:
+            cur_path = os.path.abspath(os.path.dirname(__file__))
+            cur_path.replace('\\', '/')
+            with open(cur_path+ '/high_score.txt', 'r') as f:
                 self.high_score = int(f.read())
         except FileNotFoundError:
             self.high_score = 0

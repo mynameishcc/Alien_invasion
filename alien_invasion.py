@@ -8,6 +8,7 @@ from time import sleep
 from game_stats import GameStats
 from button import Button
 from scoreboard import Scoreboard
+import os
 
 class AlienInvasion:
     def __init__(self):
@@ -202,7 +203,9 @@ class AlienInvasion:
                 break
 
     def _quit_game(self):
-        with open('high_score.txt', 'w') as f:
+        cur_path = os.path.abspath(os.path.dirname(__file__))
+        cur_path.replace('\\', '/')
+        with open(cur_path + '/high_score.txt', 'w') as f:
             f.write(str(self.stats.high_score))
         sys.exit()
 
