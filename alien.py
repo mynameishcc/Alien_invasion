@@ -6,9 +6,9 @@ class Alien(Sprite):
     def __init__(self, ai_game):
         super().__init__()
         self.screen = ai_game.screen
-        cur_path = os.path.abspath(os.path.dirname(__file__))
-        cur_path.replace('\\', '/')
-        self.image = pygame.image.load(cur_path + '/image/alien.bmp')
+        #cur_path = os.path.abspath(os.path.dirname(__file__))
+        #cur_path.replace('\\', '/')
+        self.image = pygame.image.load('./image/alien.bmp')
         self.rect = self.image.get_rect()
 
         self.rect.x = self.rect.width

@@ -6,9 +6,9 @@ class GameStats:
         self.reset_stats()
         self.game_active = False
         try:
-            cur_path = os.path.abspath(os.path.dirname(__file__))
-            cur_path.replace('\\', '/')
-            with open(cur_path+ '/high_score.txt', 'r') as f:
+            #cur_path = os.path.abspath(os.path.dirname(__file__))
+            #cur_path.replace('\\', '/')
+            with open('./high_score.txt', 'r') as f:
                 self.high_score = int(f.read())
         except FileNotFoundError:
             self.high_score = 0

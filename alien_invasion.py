@@ -203,9 +203,9 @@ class AlienInvasion:
                 break
 
     def _quit_game(self):
-        cur_path = os.path.abspath(os.path.dirname(__file__))
-        cur_path.replace('\\', '/')
-        with open(cur_path + '/high_score.txt', 'w') as f:
+        #cur_path = os.path.abspath(os.path.dirname(__file__))
+        #cur_path.replace('\\', '/')
+        with open('./high_score.txt', 'w') as f:
             f.write(str(self.stats.high_score))
         sys.exit()
 
